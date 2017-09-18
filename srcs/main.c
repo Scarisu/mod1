@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 16:45:19 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/18 17:02:06 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/18 18:37:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int		main(int ac, char **av)
 {
-	usage(ac, av);
+	t_mod	mod1;
+
+	(void)mod1;
+	(void)av;
+	usage(ac, av[1]);
 	return (0);
 }
