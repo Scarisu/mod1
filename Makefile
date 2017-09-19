@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/18 16:58:48 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/19 18:40:04 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ NAME			=	mod1
 OBJDIR			=	objs/
 SRCDIR			=	srcs/
 SRC				=	main.c \
-					error.c
+					error.c \
+					info.c \
+					init.c \
+					usage.c
 OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc
