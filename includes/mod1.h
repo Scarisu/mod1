@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 16:45:46 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/23 15:25:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/23 19:04:39 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ struct			s_map
 	char		*map;
 	int			pos[2];
 	char		buff[2];
+	char		*arrow;
+	char		*invalid;
 };
 
 struct			s_mod
@@ -71,9 +73,12 @@ void			open_map(t_mod *mod1);
 void			error(t_mod *mod1, int e);
 void			get_points(t_mod *mod1);
 int				sp_gnl(t_mod *mod1, char **line);
-void			valid_char(t_mod *mod1, char c);
+int				valid_char(t_mod *mod1, char c, int sw);
 void			error_map(t_mod *mod1);
-
+void			get_all_line(t_mod *mod1);
+void			print_line(t_mod *mod1);
 void			clean_all(t_mod *mod1, int end);
+void			adjust_arrow(t_mod *mod1, char **arrow, int size);
+void 			list_invalid(t_mod *mod1, char c);
 
 #endif

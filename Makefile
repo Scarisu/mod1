@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/19 18:40:04 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/23 16:24:53 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC				=	main.c \
 					error.c \
 					info.c \
 					init.c \
-					usage.c
+					usage.c \
+					verbos.c
 OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc
