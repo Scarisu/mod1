@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 15:43:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/19 20:11:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/23 14:51:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ void	set_all(t_mod *mod1)
 	mod1->coor = NULL;
 }
 
-void	clean_all(t_mod *mod1)
+void	clean_all(t_mod *mod1, int end)
 {
 	ft_memdel((void **)&mod1->map.line);
 	ft_memdel((void **)&mod1->map.map);
 	(mod1->fd > 2) ? close(mod1->fd) : 0;
-	while(1);
+	read(1, NULL, 1);
+	if (end)
+		return ;
 	exit(-1);
 }

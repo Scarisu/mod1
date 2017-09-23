@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 16:45:46 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/19 20:10:03 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/23 15:25:43 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@
 # define RED_MINUS "\033[38;5;9m"
 # define GREEN_MINUS "\033[38;5;10m"
 # define GREY "\033[38;5;8m"
+# define GRAS "\033[1m"
+# define DLONG_MAX 9223372036854775807
+# define DLONG_MIN -9223372036854775807
+
 
 # define CANT_OPEN 1
 # define MALLOC 2
 # define FD 3
 # define INVALID_CHAR 4
-
-# define NO_ERROR mod1->nb_err == 0
 
 typedef struct s_mod	t_mod;
 typedef struct s_coor	t_coor;
@@ -70,7 +72,8 @@ void			error(t_mod *mod1, int e);
 void			get_points(t_mod *mod1);
 int				sp_gnl(t_mod *mod1, char **line);
 void			valid_char(t_mod *mod1, char c);
+void			error_map(t_mod *mod1);
 
-void			clean_all(t_mod *mod1);
+void			clean_all(t_mod *mod1, int end);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:50:05 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/19 20:13:51 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/23 14:52:38 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	valid_char(t_mod *mod1, char c)
 {
 	int		i;
-	char	valid_char[18];
+	char	valid_char[19];
 
 	i = 0;
 	if (c == '\n')
@@ -23,7 +23,7 @@ void	valid_char(t_mod *mod1, char c)
 			((int[2]){++mod1->map.pos[0], 0}), sizeof(int[2]));
 	else
 		++mod1->map.pos[1];
-	ft_memcpy(valid_char, ((char[18]){"0123456789,() \n\0"}), sizeof(char[18]));
+	ft_memcpy(valid_char, ((char[19]){"0123456789,() -\n\0"}), sizeof(char[19]));
 	while (valid_char[i] && valid_char[i] != c)
 		++i;
 	(!valid_char[i]) ? error(mod1, INVALID_CHAR) : 0;
@@ -49,7 +49,6 @@ int		sp_gnl(t_mod *mod1, char **line)
 		valid_char(mod1, mod1->map.buff[0]);
 		++size;
 	}
-	//(*line)[size - 1] = '\0';
 	return (size);
 }
 
@@ -57,8 +56,7 @@ void	get_points(t_mod *mod1)
 {
 	while ((sp_gnl(mod1, &mod1->map.line)))
 	{
-		// if (NO_ERROR)
-		// 	ft_strjoin_clean(&mod1->map.map, &mod1->map.line);
+
 		ft_memdel((void **)&mod1->map.line);
 	}
 	ft_memdel((void **)&mod1->map.line);

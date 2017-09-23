@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 18:39:41 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/19 20:12:39 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/23 14:47:19 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void	usage(t_mod *mod1, int ac, char *av)
 	(ac < 2) ? ft_putstr_fd("Missing map\n", 2) : 0;
 	(ac > 2) ? ft_putstr_fd("Too many arguments\n", 2) : 0;
 	ft_putstr_fd(RESET"usage: ./mod1 {map_name}.mod1\n", 2);
-	clean_all(mod1);
+	clean_all(mod1, 0);
 }
