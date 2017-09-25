@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/23 16:06:59 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/23 19:10:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/25 16:48:03 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,23 +64,10 @@ void	adjust_arrow(t_mod *mod1, char **arrow, int size)
 {
 	int				space;
 
-
-	//printf("[%d].[%d].[%zu]\n", size, mod1->map.pos[1], ft_strlen(*arrow));
-	space = size - (mod1->map.pos[1] - 1) - ft_strlen(*arrow);
-	//printf("[%zu].[%d]\n", ft_strlen(*arrow), space);
+	space = size - (mod1->map.pos[1]) - ft_strlen(*arrow);
 	while (--space > 0)
 		ft_strjoin_clean_char(arrow, ' ');
 	ft_strjoin_clean_char(arrow, '~');
-	//space = size - mod1->map.pos[1];
-
-	//while (len++ != space)
-		//ft_strjoin_clean_char(arrow, ' ');
-	//if (mod1->map.buff[0] == '	')
-	//{
-		//ft_strjoin_clean_char(arrow, '~');
-		//ft_strjoin_clean_char(arrow, '~');
-	//}
-	//ft_strjoin_clean_char(arrow, '~');
 	(void)mod1;
 	(void)arrow;
 	(void)size;
