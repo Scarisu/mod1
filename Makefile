@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/23 16:24:53 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/25 21:38:56 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,14 @@ OBJDIR			=	objs/
 SRCDIR			=	srcs/
 SRC				=	main.c \
 					error.c \
-					info.c \
 					init.c \
 					usage.c \
-					verbos.c
+					get_line.c \
+					ver_char.c \
+					ver_value.c \
+					check_file.c \
+					check_char.c \
+					check_value.c
 OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   check_value.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 06:21:00 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/25 18:44:16 by pbernier         ###   ########.fr       */
+/*   Created: 2017/09/25 21:37:18 by pbernier          #+#    #+#             */
+/*   Updated: 2017/09/25 21:58:38 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <mod1.h>
 
-char	*ft_strchr(const char *s, int c)
+int			check_value(t_mod *mod1, char *line)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i] && s[i] != (char)c)
-		++i;
-	if (s[i] == (char)c)
-		return ((char*)&(s[i]));
-	return (NULL);
+	len = 0;
+	(void)mod1;
+	(void)line;
+	return (1);
 }

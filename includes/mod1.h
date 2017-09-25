@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 16:45:46 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/23 19:04:39 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/25 22:53:24 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,19 @@
 # define DLONG_MAX 9223372036854775807
 # define DLONG_MIN -9223372036854775807
 
+# define MAX_ERROR 10
+# define NB_LINE mod1->map.pos[0]
+# define NB_COLUMN mod1->map.pos[1]
+# define TMP mod1->map.tmp
+# define BUFF mod1->map.buff[0]
 
 # define CANT_OPEN 1
 # define MALLOC 2
 # define FD 3
-# define INVALID_CHAR 4
+# define VERBOS 4
+
+# define INVALID_CHAR 1
+# define START_BRACES 2
 
 typedef struct s_mod	t_mod;
 typedef struct s_coor	t_coor;
@@ -41,6 +49,7 @@ typedef struct s_map	t_map;
 
 struct			s_coor
 {
+	int			name;
 	long double	x;
 	long double	y;
 	long double	z;
@@ -50,11 +59,11 @@ struct			s_map
 {
 	char		*map_name;
 	char		*line;
-	char		*map;
-	int			pos[2];
+	size_t		pos[2];
 	char		buff[2];
 	char		*arrow;
 	char		*invalid;
+	char		*tmp;
 };
 
 struct			s_mod
@@ -71,14 +80,19 @@ int				check_name(t_mod *mod1, char *map_name);
 void			set_all(t_mod *mod1);
 void			open_map(t_mod *mod1);
 void			error(t_mod *mod1, int e);
-void			get_points(t_mod *mod1);
-int				sp_gnl(t_mod *mod1, char **line);
-int				valid_char(t_mod *mod1, char c, int sw);
-void			error_map(t_mod *mod1);
-void			get_all_line(t_mod *mod1);
-void			print_line(t_mod *mod1);
+int				get_line(t_mod *mod1, char **line);
+void			check_file(t_mod *mod1);
+int				check_char(t_mod *mod1, char *line);
+int				check_value(t_mod *mod1, char *line);
+int				valid_char(char c);
+void			list_char(char **invalid, char c);
+void			ver_char(t_mod *mod1);
+void			ver_pos(t_mod *mod1);
 void			clean_all(t_mod *mod1, int end);
-void			adjust_arrow(t_mod *mod1, char **arrow, int size);
-void 			list_invalid(t_mod *mod1, char c);
+void			print_invalid(t_mod *mod1, char **invalid);
+void			print_line(t_mod *mod1, char **line);
+void			adjust_arrow(char **arrow, char c, int size);
+void			print_arrow(t_mod *mod1, char **arrow);
+void			ver_value(t_mod *mod1, int e);
 
 #endif
