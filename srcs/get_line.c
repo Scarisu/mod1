@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/25 18:01:07 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/25 21:07:32 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/26 19:25:35 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int		get_line(t_mod *mod1, char **line)
 		++size;
 	}
 	(*line)[size - 1] = '\0';
+	while (size - 2 >= 0 && (*line)[size - 2] == ' ')
+		(*line)[size-- - 2] = '\0';
 	return (size);
 }

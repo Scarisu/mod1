@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 16:45:46 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/25 22:53:24 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/26 21:49:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ struct			s_map
 	char		*arrow;
 	char		*invalid;
 	char		*tmp;
+	char		**value;
 };
 
 struct			s_mod
@@ -94,5 +95,6 @@ void			print_line(t_mod *mod1, char **line);
 void			adjust_arrow(char **arrow, char c, int size);
 void			print_arrow(t_mod *mod1, char **arrow);
 void			ver_value(t_mod *mod1, int e);
+void			realloc_value(t_mod *mod1, char *line, size_t start, size_t end);
 
 #endif

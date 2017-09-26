@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 01:23:59 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 13:11:17 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/26 20:14:30 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ char	*ft_strcpy(char *dst, const char *src)
 {
 	int		i;
 
-	i = 0;
-	while (src[i] != '\0')
-	{
+	i = -1;
+	if (ft_strlen(dst) < ft_strlen(src))
+		return (NULL);
+	while (src[++i])
 		dst[i] = src[i];
-		i++;
-	}
 	dst[i] = src[i];
 	return (dst);
 }
